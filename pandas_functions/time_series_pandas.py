@@ -30,3 +30,21 @@ pd.DataFrame({
 close.resample('W').ohlc() # open high low close
 
 ######################################################
+
+s = pd.Series([1, 2, 3, 4, 5])
+s.rolling(3).sum()
+# 0     NaN
+# 1     NaN
+# 2     6.0
+# 3     9.0
+# 4    12.0
+
+s.expanding(3).sum()
+# 0     NaN
+# 1     NaN
+# 2     6.0
+# 3    10.0
+# 4    15.0
+
+
+s.rolling(3).max()
